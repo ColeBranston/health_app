@@ -75,7 +75,7 @@ a:hover {
     align-items: center;
     color: white;
     width: 55rem;
-    height: 35rem;
+    height: 20rem;
 }
 
 /* __________________________ */
@@ -88,9 +88,9 @@ a:hover {
     flex-direction: row;
     border: 0.2rem solid transparent;
     width: auto;
-    height: auto;
+    height: 100%;
     justify-content: space-around;
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
     padding-top: 0.5rem;
     padding-right: 10rem;
     padding-left: 10rem;
@@ -103,7 +103,7 @@ a:hover {
     border: 0.2rem solid purple;
     border-radius: 1rem;
     width: 45rem;
-    height: 20rem;
+    height: 15rem;
 }
 
 .infoSpace {
@@ -131,7 +131,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     width: auto;
-    height: 52rem;
+    height: 45rem;
     justify-content: center;
     align-items: center;
 }
