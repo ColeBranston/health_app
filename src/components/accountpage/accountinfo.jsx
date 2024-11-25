@@ -8,8 +8,8 @@ const accountinfo = () => {
                 <p className='bodyText'>Email: null</p>
                 <p className='bodyText'>Password: null</p>
                 <p className='bodyText'>API Details: </p>
-                <span className='tabbed'><p className='bodyText'>Client ID: <span style={{paddingLeft: '32.5rem'}}>null</span></p></span>
-                <span className='tabbed'><p className='bodyText'>Auth Endpoint: <span style={{paddingLeft: '30.25rem'}}>null</span></p></span>
+                <span className='tabbed'><p className='bodyText'>Client ID: null</p></span>
+                <span className='tabbed'><p className='bodyText'>Auth Endpoint: null </p></span>
             </div>
         </div>
     );
