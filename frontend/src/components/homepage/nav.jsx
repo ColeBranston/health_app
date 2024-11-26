@@ -13,7 +13,7 @@ const Nav = () => {
                 <Link to="/"><li className='innerDiv'><p>Home</p></li></Link>
                 <Link to="/DailyInfo"><li className='innerDiv'><p>Daily Info</p></li></Link>
                 <Link to="/HealthHistory"><li className='innerDiv'><p>Health History</p></li></Link>
-                <Link to="/SubmitPage"><li className='innerDiv'><p>Login</p></li></Link>
+                <Link to="/SubmitPage"><li className='innerDiv'><p>Sign Up</p></li></Link>
                 </div>
                 <div className='accountNav'>
                     <li>

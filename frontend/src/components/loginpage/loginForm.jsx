@@ -1,13 +1,14 @@
 import { useState } from "react";
+import {Link} from 'react-router-dom';
 
-function Form(){
+const LoginForm = () => {
     const [email, setEmail] = useState("") //creating state variables and change functions and assigning the intial values as blank ("")
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [clientID, setClientID] = useState("")
     
     const send = async() => {
-        await fetch("http://localhost:3000/submit/account", {method:"POST", headers:{
+        await fetch("http://localhost:4000/account/signin", {method:"POST", headers:{
 			'Content-Type': 'application/json'
         }, body: JSON.stringify({
             "email": email,
@@ -22,7 +23,8 @@ function Form(){
     }
     return(
         <div className="formContainer">
-            <form className="form">
+            <h1 className="bodyText">Sign In</h1>
+            <form className="form" onSubmit={send}>
                 <p className="bodyText innerForm">Email: <input className="inputField" type="email" value={email} onChange={(e) => {
                     setEmail(e.target.value)
                 }}/></p>
@@ -36,11 +38,14 @@ function Form(){
                     setClientID(e.target.value)
                 }}/></p>
 
-                <button className="submitButton" onClick={send}>Submit</button>
+                <button className="submitButton" type="submit">Submit</button>
             </form>
+            <div>
+                <p className="bodyText outerForm">Or <span style={{opacity:"0"}}>.</span> <Link to="/SubmitPage"> Sign Up</Link></p>
+            </div>
         </div>
 
     );
 }
 
-export default Form;
+export default LoginForm;

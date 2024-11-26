@@ -1,11 +1,11 @@
 import Nav from "../components/homepage/nav"
-import Form from "../components/submitpage/form"
+import CreateForm from "../components/submitpage/signupform"
 
 const SubmitPage = () => {
     return(
     <>
     <Nav/>
-    <Form/>
+    <CreateForm/>
     </>
     );
 }

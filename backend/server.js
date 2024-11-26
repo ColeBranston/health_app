@@ -18,31 +18,61 @@ app.get('/', (req, res) => {
   res.send('Successful response.'); // When a get request is made to this API it will send this
 });
 
-app.get('/:num1', (req, res) => {
-  const { num1 } = req.params;
-  const numberVal = Number(num1);
-  res.json({ numberVal });
-});
+// app.get('/:num1', (req, res) => {
+//   const { num1 } = req.params;
+//   const numberVal = Number(num1);
+//   res.json({ numberVal });
+// });
 
-app.post('/submit', (req, res) => {
-  const { num1, num2 } = req.body;
-  const value = num1 * num2;
+// app.post('/CreateAccount', (req, res) => {
+//   const { num1, num2 } = req.body;
+//   const value = num1 * num2;
 
-  if (isNaN(value)) {
-    console.error("The result is NaN");
-  } else {
-    console.log("The result is:", value);
-  }
+//   if (isNaN(value)) {
+//     console.error("The result is NaN");
+//   } else {
+//     console.log("The result is:", value);
+//   }
   
-  res.json({ num1, num2, value });
-});
+//   res.json({ num1, num2, value });
+// });
 
-app.post('/submit/account', (req, res)=>{ //for adding account
+let savedEmail;
+let savedUsername;
+let savedPassword;
+let savedClientID;
+
+app.post('/account/create', (req, res)=>{ //for adding account
+
     const { email, username, password, clientID } = req.body;
     console.log({email, username, password, clientID})
+
+    savedEmail = email
+    savedUsername = username
+    savedPassword = password
+    savedClientID = clientID
+
+    console.log("Info Has Been Saved")
+
     res.json({email, username, password, clientID})
 
 })
 
+app.post('/account/signin', (req, res) => {
+  const { email, username, password, clientID } = req.body;
+  if (email === savedEmail && username === savedUsername && password === savedPassword && clientID === savedClientID) {
+    console.log("User Exists")
+    res.send("User Exists")
+  } else {
+    console.log("User Doesn't Exist")
+    res.send("User Doesn't Exist")
+  }
+})
+
+app.get('/account/queryInfo', (req, res) => {
+  console.log({savedEmail, savedUsername, savedPassword, savedClientID})
+  res.json({savedEmail, savedUsername, savedPassword, savedClientID})
+})
+
 // Listening for when a user connects to the API
-app.listen(3000, () => console.log('Example app is listening on port 3000.'));
+app.listen(4000, () => console.log('Example app is listening on port 4000.'));
