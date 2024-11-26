@@ -33,7 +33,7 @@ a:hover {
 .innerNav {
     display: flex;
     justify-content: space-between;
-    width: 30%;
+    width: 40%;
 }
 
 .accountNav {
@@ -150,4 +150,88 @@ a:hover {
 
 .tabbed {
     padding-left: 5rem;
+}
+
+/* __________________________ */
+        /* Submit Page */
+/* __________________________ */
+
+.formContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.form {
+    padding-top: 10rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.innerForm {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputField {
+    background-color: black;
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    width: 75%;
+}
+
+.inputField[type="email"] { 
+    font-family: DejaVu Sans Mono, monospace; 
+    font-size: 0.95rem;
+    height: 70%;
+}
+.inputField[type="text"] { 
+    font-family: DejaVu Sans Mono, monospace; 
+    font-size: 0.95rem;
+    height: 70%;
+}
+.inputField[type="password"] { 
+    font-family: DejaVu Sans Mono, monospace; 
+    font-size: 0.95rem;
+    height: 70%;
+}
+
+input:focus {
+    outline: none; /* Removes the default outline */
+    border: 1px solid transparent; /* Or any other color you prefer */
+    border-bottom: 1px solid white;
+}
+
+::-ms-reveal {
+    filter: invert(100%);
+  }
+
+.submitButton {
+    background-color: black;
+    color: white;
+  }
+
+.inputField[type="submit"] {
+    color: white;
+    background-color: black;
+}
+
+.submitButton {
+    background-color: black;
+    font-family: DejaVu Sans Mono, monospace; 
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    margin-top: 3rem;
+    
 }

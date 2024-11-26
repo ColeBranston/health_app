@@ -6,6 +6,7 @@ import Homepage from './Pages/Homepage'
 import DailyInfo from './Pages/DailyInfo'
 import HealthHistory from './Pages/HealthHistory'
 import AccountPage from './Pages/AccountPage'
+import SubmitPage from './Pages/SubmitPage'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,6 +18,7 @@ root.render(
         <Route path="/DailyInfo" element={<DailyInfo/>} />
         <Route path="/HealthHistory" element={<HealthHistory/>} />
         <Route path="/Account" element={<AccountPage/>} />
+        <Route path="/SubmitPage" element={<SubmitPage/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

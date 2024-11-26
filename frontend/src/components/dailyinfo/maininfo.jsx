@@ -1,6 +1,6 @@
 import '../main.css'
 
-const maininfo = () => {
+const Maininfo = () => {
     return(
         <>
         <div className='mainContainer'>
@@ -43,4 +43,4 @@ const maininfo = () => {
     );
 }
 
-export default maininfo
+export default Maininfo

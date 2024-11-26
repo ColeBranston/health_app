@@ -1,6 +1,6 @@
 import '../main.css'
 
-const historyinfo = () => {
+const Historyinfo = () => {
     return(
         <>
         <div className='mainContainer'>
@@ -42,5 +42,4 @@ const historyinfo = () => {
         </>
         );
 }
-
-export default historyinfo;
+export default Historyinfo;

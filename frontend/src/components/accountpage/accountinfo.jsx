@@ -1,6 +1,6 @@
 import '../main.css'
 
-const accountinfo = ({user_name, user_email, user_password, user_clientid, user_clientsecret, auth_endpoint}) => {
+const Accountinfo = ({user_name, user_email, user_password, user_clientid, user_clientsecret, auth_endpoint}) => {
     return (
         <div className='accountContainer'>
             <div className='accountInfo'>
@@ -16,4 +16,4 @@ const accountinfo = ({user_name, user_email, user_password, user_clientid, user_
     );
 }
 
-export default accountinfo
+export default Accountinfo
