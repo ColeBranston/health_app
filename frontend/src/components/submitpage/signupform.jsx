@@ -25,16 +25,16 @@ const CreateForm = () => {
         <div className="formContainer">
             <h1 className="bodyText">Sign Up</h1>
             <form className="form" onSubmit={send}>
-                <p className="bodyText innerForm">Email: <input className="inputField" type="email" value={email} onChange={(e) => {
+                <p className="bodyText innerForm">Email: <input required className="inputField" type="email" value={email} onChange={(e) => {
                     setEmail(e.target.value)
                 }}/></p>
-                <p className="bodyText innerForm">Username: <input className="inputField" type="text" value={username} onChange={(e) => {
+                <p className="bodyText innerForm">Username: <input required className="inputField" type="text" value={username} onChange={(e) => {
                     setUsername(e.target.value)
                 }}/></p>
-                <p className="bodyText innerForm">Password: <input className="inputField" type="password" value={password} onChange={(e) => {
+                <p className="bodyText innerForm">Password: <input required className="inputField" type="password" value={password} onChange={(e) => {
                     setPassword(e.target.value)
                 }}/></p>
-                <p className="bodyText innerForm">ClientID: <input className="inputField" type="text" value={clientID} onChange={(e) => {
+                <p className="bodyText innerForm">ClientID: <input required className="inputField" type="text" value={clientID} onChange={(e) => {
                     setClientID(e.target.value)
                 }}/></p>
 

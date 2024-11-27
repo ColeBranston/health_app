@@ -62,10 +62,10 @@ app.post('/account/signin', (req, res) => {
   const { email, username, password, clientID } = req.body;
   if (email === savedEmail && username === savedUsername && password === savedPassword && clientID === savedClientID) {
     console.log("User Exists")
-    res.send("User Exists")
+    res.status(200)
   } else {
     console.log("User Doesn't Exist")
-    res.send("User Doesn't Exist")
+    res.status(500)
   }
 })
 
