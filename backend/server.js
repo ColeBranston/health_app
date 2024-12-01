@@ -54,7 +54,7 @@ app.post('/account/create', (req, res)=>{ //for adding account
 
     console.log("Info Has Been Saved")
 
-    res.json({email, username, password, clientID})
+    return res.status(201).json({email, username, password, clientID})
 
 })
 
@@ -62,16 +62,16 @@ app.post('/account/signin', (req, res) => {
   const { email, username, password, clientID } = req.body;
   if (email === savedEmail && username === savedUsername && password === savedPassword && clientID === savedClientID) {
     console.log("User Exists")
-    res.status(200)
+    res.status(200).send()
   } else {
     console.log("User Doesn't Exist")
-    res.status(500)
+    res.status(501).send()
   }
 })
 
 app.get('/account/queryInfo', (req, res) => {
   console.log({savedEmail, savedUsername, savedPassword, savedClientID})
-  res.json({savedEmail, savedUsername, savedPassword, savedClientID})
+  res.status(200).json({savedEmail, savedUsername, savedPassword, savedClientID})
 })
 
 // Listening for when a user connects to the API

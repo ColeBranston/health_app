@@ -1,7 +1,7 @@
 /* main.css */
 
 /* __________________________ */
-        /* Homepage */
+        /* Homepage & Nav */
 /* __________________________ */
 
 .navBar {
@@ -17,10 +17,13 @@ a {
     color: inherit;
     text-decoration: inherit;
     display: inherit;
+}
+
+.Link {
     transition: 0.3s;
 }
 
-a:hover {
+.Link:hover {
     transition: 0.3s;
     color: grey;
     cursor: pointer;
@@ -33,12 +36,12 @@ a:hover {
 .innerNav {
     display: flex;
     justify-content: space-between;
-    width: 40%;
+    width: 30%;
 }
 
 .accountNav {
     display: flex;
-    width: 50%;
+    width: 70%;
     justify-content: center;
     align-items: center;
 }
@@ -76,6 +79,23 @@ a:hover {
     color: white;
     width: 55rem;
     height: 20rem;
+}
+
+.SignUpButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 2.5rem;
+    border: 2px solid white;
+    background-color: black;
+    transition: 0.3s;
+}
+
+.SignUpButton:hover {
+    background-color: white;
+    color: black;
+    transition: 0.3s;
 }
 
 /* __________________________ */
@@ -239,4 +259,9 @@ input:focus {
 .outerForm {
     display: flex;
     padding-top: 20%;
+}
+
+.popUp {
+    color: rgb(0, 187, 0);
+    padding-top: 2rem;
 }
