@@ -8,6 +8,7 @@ const CreateForm = () => {
     const [clientID, setClientID] = useState("")
 
     const [accountCreated, setAccountCreated] = useState(false)
+    const [accountExists, setAccountExists] = useState(false)
     
     const send = async(event) => {
         event.preventDefault()
@@ -22,19 +23,22 @@ const CreateForm = () => {
         })})
 
         if (response.ok){
-            console.log("Server responsed with status code: ", response.status)
+            console.log("Server responded with status code: ", response.status)
             setEmail("")
             setUsername("")
             setPassword("")
             setClientID("")
             
             setAccountCreated(true)
+            setAccountExists(false)
             
         } else {
             console.error("Error occurred with the following status: ", response.status)
+            setAccountCreated(false)
+            setAccountExists(true)
         }
         }catch (error) {
-            console.erorr("The following error has occurred: ", error)
+            console.error("The following error has occurred: ", error)
         }
     }
     return(
@@ -56,15 +60,19 @@ const CreateForm = () => {
 
                 <button className="submitButton" type="submit">Submit</button>
             </form>
+
             <div>
                 <p className="bodyText outerForm">Or <span style={{opacity:"0"}}>.</span> <Link to="/Login"> Sign In</Link></p>
             </div>
-            <div className="popUp bodyText">
-                {accountCreated?
-                <p>Account Has Been Created</p>
-                :
-                null}
+
+            <div style={{ display: accountCreated ? 'block' : 'none' }} className="popUp green">
+                {accountCreated ? <p>Account Has Been Created</p> : null}
             </div>
+
+            <div style={{ display: accountExists ? 'block' : 'none' }} className="popUp red">
+                {accountExists ? <p>Account Already Exists</p> : null}
+            </div>
+
         </div>
     );
 }

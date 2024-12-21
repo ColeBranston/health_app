@@ -3,7 +3,7 @@ import '../main.css'
 const Historyinfo = () => {
     return(
         <>
-        <div className='mainContainer'>
+        <div className='mainContainer upperPadding'>
             <div className='container'>
                 <div className='infoSpace'>
                     <p className='bodyText'>This is where to show the data</p>

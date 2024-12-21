@@ -1,5 +1,9 @@
 const express = require('express'); // Initialization
 const cors = require('cors') //adding cors
+const connectDB = require('./db/db')
+connectDB()
+
+const userFunctions = require('./db/User/User_Functions')
 
 const app = express(); // Initialization
 
@@ -13,56 +17,50 @@ app.use((req, res, next) => {
   console.log('Time: ', Date.now());
   next(); // Required, directs the program to the next middleware function or to the rest of the code
 });
+// Replace this when JWT is implemented
+var savedEmail
+var savedUsername
+var savedPassword
+var savedClientID
 
 app.get('/', (req, res) => {
   res.send('Successful response.'); // When a get request is made to this API it will send this
 });
 
-// app.get('/:num1', (req, res) => {
-//   const { num1 } = req.params;
-//   const numberVal = Number(num1);
-//   res.json({ numberVal });
-// });
-
-// app.post('/CreateAccount', (req, res) => {
-//   const { num1, num2 } = req.body;
-//   const value = num1 * num2;
-
-//   if (isNaN(value)) {
-//     console.error("The result is NaN");
-//   } else {
-//     console.log("The result is:", value);
-//   }
-  
-//   res.json({ num1, num2, value });
-// });
-
-let savedEmail;
-let savedUsername;
-let savedPassword;
-let savedClientID;
-
-app.post('/account/create', (req, res)=>{ //for adding account
+app.post('/account/create', async(req, res)=>{ //for adding account
 
     const { email, username, password, clientID } = req.body;
-    console.log({email, username, password, clientID})
 
-    savedEmail = email
-    savedUsername = username
-    savedPassword = password
-    savedClientID = clientID
+    let status = await userFunctions.createUser(email.toLowerCase(), username, password, clientID)
 
-    console.log("Info Has Been Saved")
+    console.log(status)
 
-    return res.status(201).json({email, username, password, clientID})
+    if (status == 201) {
+      console.log("Info Has Been Saved")
+      return res.status(201).json({email, username, password, clientID})
+    } else if (status == 500) {
+      console.log("Info Wasn't Saved")
+      return res.status(500).send()
+    }
+    
 
 })
 
-app.post('/account/signin', (req, res) => {
+app.post('/account/signin', async(req, res) => {
   const { email, username, password, clientID } = req.body;
-  if (email === savedEmail && username === savedUsername && password === savedPassword && clientID === savedClientID) {
+
+  const found = await userFunctions.findUser(email.toLowerCase(), username, password, clientID)
+  console.log(JSON.stringify(found))
+
+  savedEmail = found["Email"]
+  savedUsername = found["Username"]
+  savedPassword = found["Password"]
+  savedClientID = found["ClientID"]
+
+  if (found) {
     console.log("User Exists")
     res.status(200).send()
+
   } else {
     console.log("User Doesn't Exist")
     res.status(501).send()

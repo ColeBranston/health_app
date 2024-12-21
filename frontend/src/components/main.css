@@ -68,6 +68,7 @@ a {
     align-items: center;
     justify-content: center;
     padding: 7rem;
+    padding-top: 20vh;
 }
 
 .banner {
@@ -102,6 +103,9 @@ a {
         /* DailyInfo */
 /* __________________________ */
 
+.upperPadding {
+    padding-top: 10vh !important;
+}
 
 .mainContainer {
     display: flex;
@@ -111,7 +115,6 @@ a {
     height: 100%;
     justify-content: space-around;
     padding-bottom: 3rem;
-    padding-top: 0.5rem;
     padding-right: 10rem;
     padding-left: 10rem;
 }
@@ -151,7 +154,8 @@ a {
     display: flex;
     flex-direction: column;
     width: auto;
-    height: 45rem;
+    height: 70vh;
+    padding-top: 5vh;
     justify-content: center;
     align-items: center;
 }
@@ -162,7 +166,7 @@ a {
     border: 0.2rem solid white;
     border-radius: 1rem;
     background-color: rgb(7, 7, 7);
-    width: 45%;
+    width: 30%;
     height: 100%;
     padding-left: 5rem;
     padding-top: 5rem;
@@ -179,7 +183,7 @@ a {
 .formContainer {
     width: 100%;
     height: 100%;
-    padding-top: 5%;
+    padding-top: 18vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -262,6 +266,40 @@ input:focus {
 }
 
 .popUp {
-    color: rgb(0, 187, 0);
     padding-top: 2rem;
+}
+
+.green {
+    color: rgb(0, 187, 0);
+}
+
+.red{
+    color: rgb(187, 0, 0);
+}
+
+.NotExistDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+    color: white;
+    font-family: DejaVu Sans Mono, monospace;
+}
+
+.innerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3rem;
+    padding-top: 0.5rem;
+    padding-right: 10rem;
+    padding-left: 10rem;
+    border: solid white 3px;
+    border-radius: 1rem;
+}
+
+.errorCode {
+    font-size: 20px;
 }
