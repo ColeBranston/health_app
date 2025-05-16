@@ -1,6 +1,5 @@
 import { Button, Pressable, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
-import NavBar from "../components/NavBar"
 
 const MainScreen = () => {
     const [counter, setCounter] = useState(0)
@@ -26,7 +25,6 @@ const MainScreen = () => {
                     setCounter(0)
                   }}><Text style={styles.myButtonText}>Clear</Text></Pressable>
                 </View>
-                <NavBar/>
               </View>
             </SafeAreaView>
     )
